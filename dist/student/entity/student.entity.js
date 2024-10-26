@@ -17,27 +17,27 @@ exports.STUDENT = STUDENT;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], STUDENT.prototype, "id", void 0);
+], STUDENT.prototype, "ID", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
-], STUDENT.prototype, "rollno", void 0);
+], STUDENT.prototype, "ROLLNO", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], STUDENT.prototype, "Name", void 0);
+], STUDENT.prototype, "NAME", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
-], STUDENT.prototype, "Age", void 0);
+], STUDENT.prototype, "AGE", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], STUDENT.prototype, "Course", void 0);
+], STUDENT.prototype, "COURSE", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], STUDENT.prototype, "Emailid", void 0);
+], STUDENT.prototype, "EMAIL_ID", void 0);
 exports.STUDENT = STUDENT = __decorate([
     (0, typeorm_1.Entity)()
 ], STUDENT);

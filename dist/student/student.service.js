@@ -21,11 +21,32 @@ let StudentService = class StudentService {
     constructor(studentRepository) {
         this.studentRepository = studentRepository;
     }
-    findAll() {
+    async findAll() {
         return this.studentRepository.find();
     }
-    create(student) {
+    async findOne(ID) {
+        const student = await this.studentRepository.findOne({ where: { ID } });
+        if (!student) {
+            throw new common_1.NotFoundException(`Student with ID ${ID} not found`);
+        }
+        return student;
+    }
+    async create(student) {
         return this.studentRepository.save(student);
+    }
+    async update(id, student) {
+        const existingStudent = await this.findOne(id);
+        if (!existingStudent) {
+            throw new common_1.NotFoundException(`Student with ID ${id} not found`);
+        }
+        Object.assign(existingStudent, student);
+        return this.studentRepository.save(existingStudent);
+    }
+    async remove(id) {
+        const result = await this.studentRepository.delete(id);
+        if (result.affected === 0) {
+            throw new common_1.NotFoundException(`Student with ID ${id} not found`);
+        }
     }
 };
 exports.StudentService = StudentService;

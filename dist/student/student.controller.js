@@ -8,17 +8,73 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StudentController = void 0;
 const common_1 = require("@nestjs/common");
 const student_service_1 = require("./student.service");
+const student_entity_1 = require("./entity/student.entity");
 let StudentController = class StudentController {
     constructor(studentService) {
         this.studentService = studentService;
     }
+    findAll() {
+        return this.studentService.findAll();
+    }
+    findOne(id) {
+        return this.studentService.findOne(id);
+    }
+    create(student, req) {
+        return this.studentService.create(student);
+    }
+    update(id, student) {
+        return this.studentService.update(id, student);
+    }
+    remove(id) {
+        return this.studentService.remove(id);
+    }
 };
 exports.StudentController = StudentController;
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [student_entity_1.STUDENT, Object]),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "create", null);
+__decorate([
+    (0, common_1.Put)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, student_entity_1.STUDENT]),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "update", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "remove", null);
 exports.StudentController = StudentController = __decorate([
+    (0, common_1.Injectable)(),
     (0, common_1.Controller)('student'),
     __metadata("design:paramtypes", [student_service_1.StudentService])
 ], StudentController);

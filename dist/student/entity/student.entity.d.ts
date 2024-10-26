@@ -1,8 +1,8 @@
 export declare class STUDENT {
-    id: number;
-    rollno: number;
-    Name: String;
-    Age: number;
-    Course: String;
-    Emailid: String;
+    ID: number;
+    ROLLNO: number;
+    NAME: String;
+    AGE: number;
+    COURSE: String;
+    EMAIL_ID: String;
 }

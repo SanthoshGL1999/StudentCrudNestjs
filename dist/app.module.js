@@ -18,9 +18,8 @@ let AppModule = class AppModule {
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [
+        imports: [student_module_1.StudentModule,
             typeorm_1.TypeOrmModule.forRootAsync({ useClass: studentDB_config_1.DataBaseService }),
-            typeorm_1.TypeOrmModule.forFeature([student_module_1.StudentModule])
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
