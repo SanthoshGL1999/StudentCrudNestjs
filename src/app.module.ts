@@ -7,9 +7,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 
 @Module({
-  imports:[
+  imports:[StudentModule,
     TypeOrmModule.forRootAsync({useClass:DataBaseService}),
-    TypeOrmModule.forFeature([StudentModule])
     ],
   controllers: [AppController],
   providers: [AppService],

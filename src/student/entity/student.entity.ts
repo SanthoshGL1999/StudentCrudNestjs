@@ -3,20 +3,20 @@ import { Entity,Column, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class STUDENT{
     @PrimaryGeneratedColumn()
-    id: number;
+    ID: number;
 
     @Column()
-    rollno: number;
+    ROLLNO: number;
 
     @Column()
-    Name: String;
+    NAME: String;
 
     @Column()
-    Age: number;
+    AGE: number;
 
     @Column()
-    Course: String;
+    COURSE: String;
 
     @Column()
-    Emailid: String;
+    EMAIL_ID: String;
 }
